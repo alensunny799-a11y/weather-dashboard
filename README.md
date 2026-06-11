@@ -6,8 +6,6 @@ A real-time weather application with a secure backend API that keeps your OpenWe
 
 [Open the live app on Render](https://weather-dashboard-jgl5.onrender.com)
 
-> Replace this URL with your actual Render service URL after deployment.
-
 ## Features
 
 - 🔍 Search for any city's weather
