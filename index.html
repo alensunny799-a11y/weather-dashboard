@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="default-theme">
+  <div class="bg-scene" aria-hidden="true">
+    <div class="bg-base"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-stars"></div>
+    <div class="bg-sun"></div>
+    <div class="bg-clouds">
+      <span class="cloud cloud-1"></span>
+      <span class="cloud cloud-2"></span>
+      <span class="cloud cloud-3"></span>
+    </div>
+    <div class="bg-rain"></div>
+    <div class="bg-snow"></div>
+    <div class="bg-fog"></div>
+    <div class="bg-lightning"></div>
+  </div>
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <h1>Weather Dashboard</h1>
+      <p class="subtitle">Real-time conditions &amp; 5-day outlook</p>
+    </header>
+
+    <section id="hazard-alert" class="alert-banner" role="alert" aria-live="assertive">
+      <span class="alert-icon" aria-hidden="true">!</span>
+      <p id="alert-message" class="alert-message"></p>
+    </section>
+
+    <form id="search-form" class="search-bar" autocomplete="off">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Search for a city…"
+        aria-label="City name"
+        required
+      />
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+
+    <p id="error-message" class="error-message" role="alert" hidden></p>
+
+    <section id="current-weather" class="weather-card current-card" hidden>
+      <h2 class="card-title">Current Weather</h2>
+      <div class="current-main">
+        <div class="current-info">
+          <h3 id="city-name" class="city-name">—</h3>
+          <p id="weather-condition" class="weather-condition">—</p>
+        </div>
+        <p id="temperature" class="temperature">—°C</p>
+      </div>
+      <div class="current-details">
+        <div class="detail-item">
+          <span class="detail-label">Humidity</span>
+          <span id="humidity" class="detail-value">—</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Wind Speed</span>
+          <span id="wind-speed" class="detail-value">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="forecast-section" class="forecast-section" hidden>
+      <h2 class="section-title">5-Day Forecast</h2>
+      <div id="forecast-row" class="forecast-row"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
